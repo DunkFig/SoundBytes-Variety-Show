@@ -25,7 +25,7 @@ let subjects = [
     class: "Surprise",
     difficulty: "FUN",
     unit: "Surprise",
-    hint: "Think about waves as pressure differentials",
+    hint: "Woof Woof!",
     definition: ""
   },
 
@@ -104,8 +104,6 @@ let subjects = [
     hint: "Topographic and TONAL",
     definition: ""
   },
-
-  //CLASS 02
   {
     name: "Critical Bands / Cochlear Bands",
     class: "02: How do we Hear",
@@ -145,7 +143,16 @@ let subjects = [
     unit: "Audio",
     hint: "We have 3500 inner ear hair cells, and can hear from 20 to 20k hz.",
     definition: ""
+  },
+  {
+    name: "Analogue to Digital Processing of our ear.",
+    class: "02: How do we Hear",
+    difficulty: 03,
+    unit: "Audio",
+    hint: "Continous Wave to 1 or 0",
+    definition: ""
   }
+
   
 ] 
 
