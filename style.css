@@ -6,6 +6,15 @@ canvas {
   display: block;
 }
 
+#spinButton{
+  background-color: rgb(255, 255, 255);
+  font-family: "Montserrat", serif;
+}
+
+#spinButton:hover{
+  background-color: rgb(255, 195, 195);
+}
+
 
 #mainSection{
 display: flex;
@@ -17,7 +26,6 @@ display: flex;
  font-family: "Montserrat", serif;
   font-optical-sizing: auto;
   font-size: 24px;
-  
 }
 
 #hintDiv{

@@ -24,7 +24,7 @@ let subjects = [
     class: "01: What is Sound",
     difficulty: 01,
     unit: "Audio",
-    hint: "",
+    hint: "Think about waves as pressure differentials",
     definition: ""
   },
    {
@@ -32,7 +32,7 @@ let subjects = [
     class: "01",
     difficulty: 02,
     unit: "Audio",
-    hint: "",
+    hint: "Sound travels a certain distance in a second, how do we split that up to see the length of one wave?",
     definition: ""
   },
   {
@@ -40,7 +40,7 @@ let subjects = [
     class: "01: What is Sound",
     difficulty: 03,
     unit: "Audio",
-    hint: "",
+    hint: "Is our experience of sound relative. Think about the train example from class.",
     definition: ""
   },
   {
@@ -48,7 +48,7 @@ let subjects = [
     class: "01: What is Sound",
     difficulty: 03,
     unit: "Audio",
-    hint: "",
+    hint: "This is what we are mixing in the Operator in Ableton. What is the fundamental frequency?",
     definition: ""
   },
   {
@@ -56,7 +56,7 @@ let subjects = [
     class: "01: What is Sound",
     difficulty: 02,
     unit: "Audio",
-    hint: "",
+    hint: "Adding Sine waves together, think about overtones and harmonics.",
     definition: ""
   },
   {
@@ -64,7 +64,7 @@ let subjects = [
     class: "01: What is Sound",
     difficulty: 02,
     unit: "Audio",
-    hint: "",
+    hint: "What does the shape of a room of a box have to do with how it effects the air in it?",
     definition: ""
   },
   {
@@ -72,7 +72,7 @@ let subjects = [
     class: "01: What is Sound",
     difficulty: 02,
     unit: "Audio",
-    hint: "",
+    hint: "Carrier and Modulator.",
     definition: ""
   },
   {
@@ -80,7 +80,7 @@ let subjects = [
     class: "01: What is Sound",
     difficulty: 01,
     unit: "Audio",
-    hint: "",
+    hint: "Think of water vs Hot air vs Cold Air.",
     definition: ""
   },
   
@@ -90,39 +90,49 @@ let subjects = [
     class: "02: How do we Hear",
     difficulty: 01,
     unit: "Audio",
-    hint: "",
+    hint: "Topographic and TONAL",
     definition: ""
   },
+
+  //CLASS 02
   {
     name: "Critical Bands / Cochlear Bands",
     class: "02: How do we Hear",
     difficulty: 04,
     unit: "Audio",
-    hint: "",
+    hint: "Consonance and Dissonance in hearing.",
     definition: ""
   },
   {
     name: "Basillar Membrane",
     class: "02: How do we Hear",
-    difficulty: 02,
+    difficulty: 03,
     unit: "Audio",
-    hint: "",
+    hint: "This will eventually stimulate the inner ear hair cells.",
     definition: ""
   },
   {
     name: "The Cochlea",
     class: "02: How do we Hear",
-    difficulty: 01,
+    difficulty: 02,
     unit: "Audio",
-    hint: "",
+    hint: "Inner ear, think Tonotopicity",
     definition: ""
   },
   {
     name: "Limits of Audio Frequency Perception in Humans",
     class: "02: How do we Hear",
-    difficulty: 01,
+    difficulty: 02,
     unit: "Audio",
-    hint: "",
+    hint: "The low frequency is 20hz",
+    definition: ""
+  },
+  {
+    name: "What is the Resolution of our Pitch Perception?",
+    class: "02: How do we Hear",
+    difficulty: 03,
+    unit: "Audio",
+    hint: "We have 3500 inner ear hair cells, and can hear from 20 to 20k hz.",
     definition: ""
   }
   
@@ -159,7 +169,7 @@ let PlayedWin = false
 let StudentSpinRoll = false
 let StudentCount = 0
 let StudentTotal = 18
-let currentSubject 
+let currentSubject = 0
 let currentStudent
 
 let subjectHolder = document.getElementById("SubjectHolder")
@@ -223,8 +233,10 @@ function draw(){
 }
 
 hintDiv.addEventListener("mouseover", () =>{
-    hintDiv.innerHTML = currentSubject.hint
-    hintDiv.style.backgroundColor = '#e3e643'
+  if(currentSubject != 0){
+    hintDiv.innerHTML = ` <p style="font-size:14px; padding: 20px;"><i>${currentSubject.hint}</i></p>`
+  }
+    hintDiv.style.backgroundColor = '#fcfe7d'
 })
 
 hintDiv.addEventListener("mouseout", () =>{
