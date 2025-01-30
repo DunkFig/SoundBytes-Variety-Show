@@ -19,6 +19,17 @@ let students = [
   "Ky"
 ]
 let subjects = [
+// SUPRISES
+  {
+    name: "If you could be any animal, what would you be?",
+    class: "Surprise",
+    difficulty: "FUN",
+    unit: "Surprise",
+    hint: "Think about waves as pressure differentials",
+    definition: ""
+  },
+
+// CLASS 01
   {
     name: "Constructive & Destructive Interference",
     class: "01: What is Sound",
@@ -189,7 +200,6 @@ function draw(){
   
 //Logic for Subject Spin
   if(millisecond > startTime && SpinCount < SpinTotal){
-    // console.log(subjects[int(random(subjects.length))].name)
     currentSubject = subjects[int(random(subjects.length))]
     subjectHolder.innerHTML = ` 
     ${currentSubject.name}
@@ -198,9 +208,14 @@ function draw(){
     Unit: ${currentSubject.unit} <br>
     Class ${currentSubject.class}<br>
     Difficulty: ${currentSubject.difficulty}</p>
-    
     `
-    subjectHolder.style.backgroundColor = AudioColorList[currentSubject.difficulty - 1]
+    if(currentSubject.unit == 'Audio'){
+    subjectHolder.style.background = AudioColorList[currentSubject.difficulty - 1]
+    subjectHolder.style.color = '#1f1f1f'
+    }else if (currentSubject.unit == 'Surprise'){
+      subjectHolder.style.background = `linear-gradient( #ff3030, #cdff45 )`
+      subjectHolder.style.color = '#ffffff'
+    }
     synth.triggerAttackRelease("C4", "8n");
     startTime += Interval
     Interval *= 1.2
