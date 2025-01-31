@@ -396,7 +396,7 @@ function spinWheel(){
   startTime = millis() + 500
   Interval = random(50, 100)
   SpinCount = 0
-  SpinTotal = int(random(5, 18))
+  SpinTotal = int(random(5, 25))
   PlayedWin = false
 
 }
