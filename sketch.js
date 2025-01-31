@@ -3,7 +3,7 @@ let students = [
   "Ella",
   "Eli",
   "Sasha",
-  "Ephram",
+  "Efram",
   "Charlotte",
   "George",
   "Marcelo",
@@ -16,8 +16,10 @@ let students = [
   "Alia",
   "Pheonix",
   "Catalina",
-  "Ky"
+  "Ky",
+  "Ryan"
 ]
+
 let subjects = [
 // SUPRISES
   {
@@ -26,6 +28,42 @@ let subjects = [
     difficulty: "FUN",
     unit: "Surprise",
     hint: "Woof Woof!",
+    definition: ""
+  },
+  {
+    name: "What is the weirdest dream you've ever had?",
+    class: "Surprise",
+    difficulty: "FUN",
+    unit: "Surprise",
+    hint: "Zzzzzzz Zzzzzzz",
+    definition: ""
+  },
+  {
+    name: "Whats your dream Career / Job / Practice?",
+    class: "Surprise",
+    difficulty: "FUN",
+    unit: "Surprise",
+    hint: "Oh No!",
+    definition: ""
+  },
+// EXISTENTIAL QUESTION
+  {
+    name: "How has digital Recording changed the world for better and for worse?",
+    class: "Existential",
+    difficulty: "Existential",
+    unit: "Existential",
+    hint: "Woaaa!",
+    definition: ""
+  },
+
+
+// EVENTS
+  {
+    name: "Everyone permanently Change Seats, sit next to someone you don't know. We'll, talk for 1 minute.",
+    class: "Event",
+    difficulty: "Event",
+    unit: "Event",
+    hint: "Howdy!",
     definition: ""
   },
 
@@ -151,8 +189,73 @@ let subjects = [
     unit: "Audio",
     hint: "Continous Wave to 1 or 0",
     definition: ""
-  }
+  },
 
+  //CLASS 03
+  {
+    name: "What is Sample Rate in Digital Recording?",
+    class: "03: Record and Amplify",
+    difficulty: 03,
+    unit: "Audio",
+    hint: "How are we measuring all frequencies of sounds by digital means?",
+    definition: ""
+  },
+  {
+    name: "What is Aliasing in terms of Audio Sample Rate?",
+    class: "03: Record and Amplify",
+    difficulty: 04,
+    unit: "Audio",
+    hint: "What samplerate would we need to measure the highest frequency we can hear?",
+    definition: ""
+  },
+  {
+    name: "What is the difference between analogue and digital recording?",
+    class: "03: Record and Amplify",
+    difficulty: 03,
+    unit: "Audio",
+    hint: "Is there a representation of the waveform in there?",
+    definition: ""
+  },
+  {
+    name: "How does a Transducer microphone work?",
+    class: "03: Record and Amplify",
+    difficulty: 02,
+    unit: "Audio",
+    hint: "Air Pressure moves something which moves electrons.",
+    definition: ""
+  },
+  {
+    name: "How do speakers work?",
+    class: "03: Record and Amplify",
+    difficulty: 01,
+    unit: "Audio",
+    hint: "Magnets, how do they work?",
+    definition: ""
+  },
+  {
+    name: "How does a CD store sonic information?",
+    class: "03: Record and Amplify",
+    difficulty: 02,
+    unit: "Audio",
+    hint: "Is this digital or Analogue?",
+    definition: ""
+  },
+  {
+    name: "How does a Vinyl Record store sonic information?",
+    class: "03: Record and Amplify",
+    difficulty: 01,
+    unit: "Audio",
+    hint: "Think of the Musical Road!",
+    definition: ""
+  },
+  {
+    name: "How does a Tape Casette store sonic information?",
+    class: "03: Record and Amplify",
+    difficulty: 02,
+    unit: "Audio",
+    hint: "Iron Oxide doing what?",
+    definition: ""
+  }
   
 ] 
 
@@ -216,13 +319,29 @@ function draw(){
     Class ${currentSubject.class}<br>
     Difficulty: ${currentSubject.difficulty}</p>
     `
-    if(currentSubject.unit == 'Audio'){
-    subjectHolder.style.background = AudioColorList[currentSubject.difficulty - 1]
-    subjectHolder.style.color = '#1f1f1f'
-    }else if (currentSubject.unit == 'Surprise'){
+    if(currentSubject.unit == 'Audio')
+    {
+      subjectHolder.style.background = AudioColorList[currentSubject.difficulty - 1]
+      subjectHolder.style.color = '#1f1f1f'
+    }
+    else if (currentSubject.unit == 'Surprise')
+    {
       subjectHolder.style.background = `linear-gradient( #ff3030, #cdff45 )`
       subjectHolder.style.color = '#ffffff'
     }
+    else if (currentSubject.unit == 'Event')
+    {
+      subjectHolder.style.backgroundImage = "url('Images/organiser-soiree-1000x585.jpg')"
+      subjectHolder.style.color = '#ccff66'
+      subjectHolder.style.textShadow = '2px 2px 0px #FF0000; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10'
+    }
+    else if (currentSubject.unit == 'Existential')
+    {
+      subjectHolder.style.backgroundImage = "url('Images/AoWXgnHSxAAPxqymPQMQYL-1200-80.jpg')"
+      subjectHolder.style.color = '#ccff66'
+    }
+
+
     synth.triggerAttackRelease("C4", "8n");
     startTime += Interval
     Interval *= 1.2
@@ -256,13 +375,15 @@ function draw(){
 
 hintDiv.addEventListener("mouseover", () =>{
   if(currentSubject != 0){
-    hintDiv.innerHTML = ` <p style="font-size:14px; padding: 20px;"><i>${currentSubject.hint}</i></p>`
+    hintDiv.innerHTML = ` <br><br><i>${currentSubject.hint}</i>`
+    hintDiv.style.fontSize = '14px'
   }
     hintDiv.style.backgroundColor = '#fcfe7d'
 })
 
 hintDiv.addEventListener("mouseout", () =>{
   hintDiv.innerHTML = '<br><i>hint</i>'
+  hintDiv.style.fontSize = '24px'
   hintDiv.style.backgroundColor = '#e3e643'
 })
 
@@ -275,7 +396,7 @@ function spinWheel(){
   startTime = millis() + 500
   Interval = random(50, 100)
   SpinCount = 0
-  SpinTotal = int(random(1, 20))
+  SpinTotal = int(random(5, 18))
   PlayedWin = false
 
 }
