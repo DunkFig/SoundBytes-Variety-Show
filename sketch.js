@@ -74,7 +74,7 @@ let subjects = [
     difficulty: 01,
     unit: "Audio",
     hint: "Think about waves as pressure differentials",
-    definition: "When two sound waves meet, their pressure variations can add together (constructive interference) or cancel each other out (destructive interference). Constructive interference happens when the peaks of the waves align, boosting amplitude. Destructive interference occurs when a peak aligns with a trough, reducing or silencing the wave. This is the same technique which is used in noise canceling headphones, the same soundwave is produced and the phase is reversed, allowing destructive interference to silence the sound around you."
+    definition: "When two sound waves meet, their pressure variations can add together (constructive interference) or cancel each other out (destructive interference). Constructive interference happens when the peaks of the waves align, boosting amplitude. Destructive interference occurs when a peak aligns with a trough, reducing or silencing the wave. This is the same technique which is used in noise canceling headphones, the same soundwave is produced and the phase is reversed, allowing destructive interference to silence the sound around you.  <br><br><br><br><div style='width:100%; text-align:center'><img src='Images/waves.gif'> </div>"
   },
    {
     name: "Formula for Calculating the Wavelength of a Sound Wave with a Given Frequency",
