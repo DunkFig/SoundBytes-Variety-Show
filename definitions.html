@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <br>
+        <br>
+        <br>
+        <div style="display: flex; font-family: Montserrat, serif; font-size: 24px; justify-content: space-around;">
+          <a href="index.html">Game</a>
+          <a>Definitions</a>
+        </div>
+        <br>
+        <br>
+        <br>
+        
+        <div id="definitionHolder"></div>
+
+        <script src="subjects.js" ></script>
+        <script src ="sketch.js"></script>
+    </body>
+
+    <script>
+        let definitionHolder = document.getElementById('definitionHolder')
+
+        for(let i = 0; i < subjects.length; i ++){
+
+            let CurrentDefinitionSubject = subjects[i]
+
+            if(CurrentDefinitionSubject.unit == "Audio"){
+            
+            let InnerText = `
+            <div class="subjectBox">
+                <div style="font-size:22px; ">${CurrentDefinitionSubject.name} </div>
+                    <div style="font-size: 14px;"> 
+                        unit: ${CurrentDefinitionSubject.unit} <br>
+                        class ${CurrentDefinitionSubject.class}<br>
+                        difficulty: ${CurrentDefinitionSubject.difficulty}<br>
+                        <br>
+                        <b>definition:</b> ${CurrentDefinitionSubject.definition}
+    
+                    
+                    </div>
+            </div>
+            `
+
+            let addedDiv = document.createElement('div')
+
+            if(CurrentDefinitionSubject.unit == 'Audio'){
+                addedDiv.style.background = AudioColorList[CurrentDefinitionSubject.difficulty - 1]
+
+            }
+   
+            
+            addedDiv.innerHTML = InnerText
+            definitionHolder.appendChild(addedDiv)
+            
+            }
+        }
+    </script>
+</html>

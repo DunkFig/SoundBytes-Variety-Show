@@ -16,7 +16,6 @@ canvas {
   background-color: rgb(255, 195, 195);
 }
 
-
 #mainSection{
 display: flex;
 flex-wrap: wrap;
@@ -58,4 +57,16 @@ flex-wrap: wrap;
  border: solid black 1px;
  font-family: "Montserrat", serif;
 text-align: center;
+}
+
+.subjectBox{
+  font-family: "Montserrat", serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 50px;
+  border-bottom: green 1px solid;
+}
+
+#definitionHolder{
+  
 }
