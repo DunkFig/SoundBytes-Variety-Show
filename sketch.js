@@ -106,7 +106,7 @@ function draw(){
       subjectHolder.style.background = `linear-gradient( #ff3030, #cdff45 )`
       subjectHolder.style.color = '#ffffff'
     }
-    else if (currentSubject.unit == 'Event')
+    else if (currentSubject.unit == `Event`)
     {
       subjectHolder.style.backgroundImage = "url('Images/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2018__08__CollectionOfCloudsAgainstABlueSky-8cae9f3109d14dcf98d9facc5775222f.jpg')"
       subjectHolder.style.color = '#000000'
