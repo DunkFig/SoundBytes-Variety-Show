@@ -452,6 +452,24 @@ let subjects = [
     melody, emotional delivery. The Geno-Song refers to the underlying materiality of 
     the voice (the physicality, the “flesh” of the language) that can convey meaning 
     beyond the immediate or obvious aspects of the performance.`
-  }
+  },
+
+
+  /// CLASS 06 Technology
+  {
+    name: `Talk About Peer to Peer Networks (Napster, Limewire, etc..), how did these influence listening habits?`,
+    class: `06: How does Technology Influence how we Listen?`,
+    difficulty: 2,
+    unit: `Audio`,
+    hint: `Illegal or Not?`,
+    definition: `Peer to Peer Networks like Napster were networks where individuals could
+    access eachothers files through the internet. Napster particularly had a central Index Server
+    where the files were listed, although limewire did not have this feature. Later sites like "The Pirate
+    Bay" used torrents, which essentially were ways that users could download a 
+    little bit of the file of their choice from many different users - like having everyone give you a small piece of the file i
+    instead of downloading it from the same place. 
+    `
+  },
+
 
 ];
